@@ -13,7 +13,10 @@ export class ListService {
   ) {}
 
   async findAllByUser(user: User): Promise<List[]> {
-    return this.listRepository.find({ where: { user: { id: user.id } } });
+    return this.listRepository.find({
+      where: { user: { id: user.id } },
+      relations: ['tasks'],
+    });
   }
 
   async findOneByUser(id: string, user: User): Promise<List> {
