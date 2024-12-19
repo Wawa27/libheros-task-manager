@@ -12,16 +12,11 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { CurrentUser } from '../common/decorators/current-user.decorator';
 import { User } from '../users/user.entity';
 import { ListService } from './list.service';
-import { CreateTaskDto } from '../tasks/dto/create-task.dto';
-import { TaskService } from '../tasks/task.service';
 
 @Controller('lists')
 @UseGuards(JwtAuthGuard)
 export class ListController {
-  constructor(
-    private readonly listService: ListService,
-    private readonly taskService: TaskService,
-  ) {}
+  constructor(private readonly listService: ListService) {}
 
   @Get()
   async findAll(@CurrentUser() user: User) {
