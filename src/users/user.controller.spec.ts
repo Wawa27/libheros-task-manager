@@ -5,7 +5,6 @@ import { User } from './user.entity';
 
 describe('UserController', () => {
   let userController: UserController;
-  let userService: UserService;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -22,7 +21,6 @@ describe('UserController', () => {
     }).compile();
 
     userController = app.get<UserController>(UserController);
-    userService = app.get<UserService>(UserService);
   });
 
   it('should be defined', () => {
