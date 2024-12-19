@@ -6,6 +6,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { typeOrmConfig } from './config/database.config';
 import { AuthModule } from './auth/auth.module';
 import { ListModule } from './lists/list.module';
+import { TaskModule } from './tasks/task.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ListModule } from './lists/list.module';
     }),
     AuthModule,
     ListModule,
+    TaskModule,
   ],
   controllers: [AppController],
   providers: [AppService],
