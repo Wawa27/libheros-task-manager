@@ -14,7 +14,7 @@ describe('AuthController', () => {
     firstName: 'John',
     lastName: 'Doe',
     email: 'john.doe@example.com',
-    password: 'hashedpassword', // Typically, this would be a hashed password
+    password: 'hashedpassword',
   };
 
   const registerDto: RegisterDto = {

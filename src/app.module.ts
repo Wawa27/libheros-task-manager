@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { typeOrmConfig } from './config/database.config';
+import { AuthModule } from './auth/auth.module';
+import { ListModule } from './lists/list.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { typeOrmConfig } from './config/database.config';
       useFactory: (configService: ConfigService) =>
         typeOrmConfig(configService),
     }),
+    AuthModule,
+    ListModule,
   ],
   controllers: [AppController],
   providers: [AppService],

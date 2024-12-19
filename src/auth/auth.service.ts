@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UserService } from '../users/user.service'; // Assuming you already have a User service
+import { UserService } from '../users/user.service';
 import { User } from '../users/user.entity';
 import * as bcrypt from 'bcrypt';
 import { RegisterDto } from './dto/register.dto';
@@ -24,7 +24,7 @@ export class AuthService {
   }
 
   async validateUser(email: string, password: string): Promise<any> {
-    const user = await this.userService.findOneByEmail(email);
+    const user = await this.userService.findOneByEmail(email, true);
     if (!user) {
       return null;
     }
