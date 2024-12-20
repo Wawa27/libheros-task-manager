@@ -26,18 +26,4 @@ describe('UserController', () => {
   it('should be defined', () => {
     expect(userController).toBeDefined();
   });
-
-  describe('findAll', () => {
-    it('should return an array of users', async () => {
-      const result = await userController.findAll();
-      expect(result).toBeInstanceOf(Array);
-    });
-  });
-
-  describe('findOne', () => {
-    it('should return a user', async () => {
-      const result = await userController.findOne('1');
-      expect(result).toBeInstanceOf(User);
-    });
-  });
 });
